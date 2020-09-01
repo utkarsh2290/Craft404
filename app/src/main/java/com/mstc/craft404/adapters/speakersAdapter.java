@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.mstc.craft404.R;
 import com.mstc.craft404.model.speakersModel;
 
@@ -36,7 +37,7 @@ public class speakersAdapter extends RecyclerView.Adapter<speakersAdapter.myView
 
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, final int position) {
-        holder.speakerImage.setImageResource(mDataSpeaker.get(position).getSpeakerImage());
+        Glide.with(mContext).load(mDataSpeaker.get(position).getSpeakerPicLink()).into(holder.speakerImage);
         holder.speakerName.setText(mDataSpeaker.get(position).getSpeakerName());
         holder.speakerDesc.setText(mDataSpeaker.get(position).getSpeakerDescription());
         holder.speakerLink.setText(mDataSpeaker.get(position).getSpeakerLink());

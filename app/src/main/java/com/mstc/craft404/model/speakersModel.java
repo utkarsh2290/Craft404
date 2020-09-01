@@ -4,19 +4,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class speakersModel {
-    private int speakerImage;
-    private String speakerName,speakerDescription,speakerLink;
+    private String speakerName,speakerDescription,speakerLink,speakerPicLink;
 
-    public speakersModel(int speakerImage, String speakerName, String speakerDescription, String speakerLink) {
-        this.speakerImage = speakerImage;
+    public speakersModel(String speakerName, String speakerDescription, String speakerLink,String speakerPicLink) {
+
         this.speakerName = speakerName;
         this.speakerDescription = speakerDescription;
         this.speakerLink = speakerLink;
+        this.speakerPicLink=speakerPicLink;
     }
 
-    public int getSpeakerImage() {
-        return speakerImage;
-    }
 
     public String getSpeakerName() {
         return speakerName;
@@ -30,8 +27,12 @@ public class speakersModel {
         return speakerLink;
     }
 
-    public void setSpeakerImage(int speakerImage) {
-        this.speakerImage = speakerImage;
+    public String getSpeakerPicLink() {
+        return speakerPicLink;
+    }
+
+    public void setSpeakerPicLink(String speakerPicLink) {
+        this.speakerPicLink = speakerPicLink;
     }
 
     public void setSpeakerName(String speakerName) {
