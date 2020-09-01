@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "242777172181",
+    "firebase_url": "https://craft404-36766.firebaseio.com",
+    "project_id": "craft404-36766",
+    "storage_bucket": "craft404-36766.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242777172181:android:3eb62f32ab7d3d7b4b1a5c",
+        "android_client_info": {
+          "package_name": "com.mstc.craft404"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242777172181-l6ep1c0i3dougp3v8i8vf1jia1buj4f5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeMm3XZOoXuepINgf3GOOK4SEBXL5LWRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242777172181-l6ep1c0i3dougp3v8i8vf1jia1buj4f5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
