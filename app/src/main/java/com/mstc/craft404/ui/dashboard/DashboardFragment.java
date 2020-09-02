@@ -1,6 +1,7 @@
 package com.mstc.craft404.ui.dashboard;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,7 @@ public class DashboardFragment extends Fragment {
     private DashboardViewModel dashboardViewModel;
     private RecyclerView recyclerViewSpeakers, recyclerViewSponsors;
     private RecyclerView.LayoutManager layoutManagerSpeakers;
-    DatabaseReference databaseReference_speakers;
+    DatabaseReference databaseReference_speakers,databaseReference_sponsor;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -88,14 +89,28 @@ public class DashboardFragment extends Fragment {
         GridLayoutManager layoutManagerSponsors=new GridLayoutManager(getContext(),2, GridLayoutManager.VERTICAL,false);
         recyclerViewSponsors.setLayoutManager(layoutManagerSponsors);
 
-        List<sponsorsModel> sponsorsList=new ArrayList<>();
-        sponsorsList.add(new sponsorsModel(R.drawable.ic_launcher_background,"Swiggy"));
-        sponsorsList.add(new sponsorsModel(R.drawable.ic_launcher_background,"Swiggy"));
-        sponsorsList.add(new sponsorsModel(R.drawable.ic_launcher_background,"Swiggy"));
-        sponsorsList.add(new sponsorsModel(R.drawable.ic_launcher_background,"Swiggy"));
+        final List<sponsorsModel> sponsorsList=new ArrayList<>();
+        databaseReference_sponsor=FirebaseDatabase.getInstance().getReference().child("Sponsor");
+        databaseReference_sponsor.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                sponsorsList.clear();
+                for (DataSnapshot dataSnapshot: snapshot.getChildren()){
+                    String image=dataSnapshot.child("picpath").getValue().toString();
+                    Log.i("Tis is image",image);
+                    sponsorsList.add(new sponsorsModel(image));
+                }
+                sponsorsAdapter sponsorsAdapter=new sponsorsAdapter(sponsorsList,getContext());
+                recyclerViewSponsors.setAdapter(sponsorsAdapter);
+            }
 
-        sponsorsAdapter sponsorsAdapter=new sponsorsAdapter(sponsorsList,getContext());
-        recyclerViewSponsors.setAdapter(sponsorsAdapter);
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
 
     }
 }

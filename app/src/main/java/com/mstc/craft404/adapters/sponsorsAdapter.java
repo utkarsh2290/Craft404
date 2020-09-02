@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.mstc.craft404.R;
 import com.mstc.craft404.model.sponsorsModel;
 
@@ -34,8 +35,7 @@ public class sponsorsAdapter extends RecyclerView.Adapter<sponsorsAdapter.myView
 
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
-        holder.sponsorsImage.setImageResource(mDataSponsors.get(position).getSponsorsImage());
-        holder.sponsorsName.setText(mDataSponsors.get(position).getSponsorsName());
+        Glide.with(mContext).load(mDataSponsors.get(position).getSponsorsName()).into(holder.sponsorsImage);
     }
 
     @Override
