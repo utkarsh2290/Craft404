@@ -18,6 +18,11 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
+        android:id="@+id/navigation_results"
+        android:name="com.mstc.craft404.ui.results.ResultsFragment"
+        android:label="@string/title_results"
+        tools:layout="@layout/results_fragment" />
+    <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.mstc.craft404.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
@@ -29,9 +34,5 @@
         android:label="@string/title_contacts"
         tools:layout="@layout/contacts_fragment" />
 
-    <fragment
-        android:id="@+id/navigation_results"
-        android:name="com.mstc.craft404.ui.results.ResultsFragment"
-        android:label="@string/title_results"
-        tools:layout="@layout/results_fragment" />
+
 </navigation>

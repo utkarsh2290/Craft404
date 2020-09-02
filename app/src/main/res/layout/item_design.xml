@@ -16,48 +16,34 @@
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-        <ImageView
-            android:id="@+id/speakerImage"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            app:srcCompat="@drawable/ic_launcher_background" />
-
         <TextView
-            android:id="@+id/speakerName"
+            android:id="@+id/designTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/speakerImage"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="4dp"
-            android:layout_toEndOf="@+id/speakerImage"
             android:gravity="center"
             android:textSize="20dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/speakerDescription"
+            android:id="@+id/designDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/speakerName"
+            android:layout_below="@id/designTitle"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="4dp"
-            android:layout_toEndOf="@id/speakerImage"
             android:gravity="center"
             android:textSize="16dp" />
 
         <TextView
-            android:id="@+id/speakerLink"
+            android:id="@+id/designLink"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/speakerDescription"
-            android:layout_alignBottom="@id/speakerImage"
+            android:layout_below="@id/designDesc"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="16dp"
-            android:layout_toEndOf="@+id/speakerImage"
             android:gravity="center"
             android:textSize="16dp" />
 

@@ -34,7 +34,7 @@ public class DashboardFragment extends Fragment {
     private DashboardViewModel dashboardViewModel;
     private RecyclerView recyclerViewSpeakers, recyclerViewSponsors;
     private RecyclerView.LayoutManager layoutManagerSpeakers;
-    DatabaseReference databaseReference_speakers,databaseReference_sponsor;
+    private DatabaseReference databaseReference_speakers,databaseReference_sponsor;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
