@@ -87,11 +87,11 @@ public class HomeFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                String day1 = snapshot.child("1").getValue(String.class);
+                String day1 = snapshot.child("0").getValue(String.class);
                 Log.i("Value fetched", day1);
                 Glide.with(getContext()).load(day1).into(timelineDay1);
 
-                String day2 = snapshot.child("2").getValue(String.class);
+                String day2 = snapshot.child("1").getValue(String.class);
                 Log.i("Value fetched", day2);
                 Glide.with(getContext()).load(day2).into(timelineDay2);
 
