@@ -3,11 +3,9 @@ package com.mstc.craft404.model;
 public class frontendModel {
     private String resFrontEndTitle;
     private String resFrontEndLink;
-    private String resFrontEndDesc;
 
-    public frontendModel(String resFrontEndTitle,String resFrontEndDesc, String resFrontEndLink) {
+    public frontendModel(String resFrontEndTitle, String resFrontEndLink) {
         this.resFrontEndTitle = resFrontEndTitle;
-        this.resFrontEndDesc = resFrontEndDesc;
         this.resFrontEndLink = resFrontEndLink;
 
     }
@@ -28,11 +26,5 @@ public class frontendModel {
         this.resFrontEndLink = resFrontEndLink;
     }
 
-    public String getResFrontEndDesc() {
-        return resFrontEndDesc;
-    }
 
-    public void setResFrontEndDesc(String resFrontEndDesc) {
-        this.resFrontEndDesc = resFrontEndDesc;
-    }
 }

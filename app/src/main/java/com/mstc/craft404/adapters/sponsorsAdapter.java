@@ -5,23 +5,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.mstc.craft404.R;
-import com.mstc.craft404.model.sponsorsModel;
 
 import java.util.List;
 
 public class sponsorsAdapter extends RecyclerView.Adapter<sponsorsAdapter.myViewHolder> {
 
-    private List<sponsorsModel>mDataSponsors;
+    private List<String>mDataSponsors;
     private Context mContext;
 
-    public sponsorsAdapter(List<sponsorsModel> mDataSponsors, Context mContext) {
+    public sponsorsAdapter(List<String> mDataSponsors, Context mContext) {
         this.mDataSponsors = mDataSponsors;
         this.mContext = mContext;
     }
@@ -35,7 +33,7 @@ public class sponsorsAdapter extends RecyclerView.Adapter<sponsorsAdapter.myView
 
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
-        Glide.with(mContext).load(mDataSponsors.get(position).getSponsorsName()).into(holder.sponsorsImage);
+        //Glide.with(mContext).load(mDataSponsors.get(position)).into(holder.sponsorsImage);
     }
 
     @Override
@@ -45,12 +43,11 @@ public class sponsorsAdapter extends RecyclerView.Adapter<sponsorsAdapter.myView
 
     public static class myViewHolder extends RecyclerView.ViewHolder{
         private ImageView sponsorsImage;
-        private TextView sponsorsName;
+
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-            sponsorsImage=itemView.findViewById(R.id.sponsorImage);
-            sponsorsName=itemView.findViewById(R.id.sponsorName);
+            sponsorsImage=itemView.findViewById(R.id.sponsor_image);
         }
     }
 }

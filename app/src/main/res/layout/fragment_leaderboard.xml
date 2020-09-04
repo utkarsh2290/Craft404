@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageview_leader_1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imageview_leader_2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageview_leader_1"/>
+    <ImageView
+        android:id="@+id/imageview_leader_3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageview_leader_2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/titlecolor"
+        android:textSize="22dp"
+        android:id="@+id/tv_leaderboard_1"
+        android:text="First Place"
+        android:fontFamily="@font/gotham_medium"
+        app:layout_constraintTop_toTopOf="@+id/imageview_leader_1"
+        app:layout_constraintStart_toEndOf="@+id/imageview_leader_1"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/titlecolor"
+        android:textSize="20dp"
+        android:id="@+id/tv_name_1"
+        android:text="Prajesh"
+        android:fontFamily="@font/gotham_regular"
+        app:layout_constraintTop_toBottomOf="@+id/tv_leaderboard_1"
+        app:layout_constraintStart_toEndOf="@+id/imageview_leader_1"
+        android:layout_marginStart="24dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/titlecolor"
+        android:textSize="22dp"
+        android:id="@+id/tv_leaderboard_2"
+        android:text="Second Place"
+        android:fontFamily="@font/gotham_medium"
+        app:layout_constraintTop_toTopOf="@+id/imageview_leader_2"
+        app:layout_constraintStart_toEndOf="@+id/imageview_leader_2"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/titlecolor"
+        android:textSize="20dp"
+        android:id="@+id/tv_name_2"
+        android:text="Prajesh"
+        android:fontFamily="@font/gotham_regular"
+        app:layout_constraintTop_toBottomOf="@+id/tv_leaderboard_2"
+        app:layout_constraintStart_toEndOf="@+id/imageview_leader_2"
+        android:layout_marginStart="24dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/titlecolor"
+        android:textSize="22dp"
+        android:id="@+id/tv_leaderboard_3"
+        android:text="Third Place"
+        android:fontFamily="@font/gotham_medium"
+        app:layout_constraintTop_toTopOf="@+id/imageview_leader_3"
+        app:layout_constraintStart_toEndOf="@+id/imageview_leader_3"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/titlecolor"
+        android:textSize="20dp"
+        android:id="@+id/tv_name_3"
+        android:text="Prajesh"
+        android:fontFamily="@font/gotham_regular"
+        app:layout_constraintTop_toBottomOf="@+id/tv_leaderboard_3"
+        app:layout_constraintStart_toEndOf="@+id/imageview_leader_3"
+        android:layout_marginStart="24dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,32 +7,27 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.mstc.craft404.ui.home.HomeFragment"
+        android:name="com.mstc.craft404.ui.timeline.TimelineFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_timeline" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.mstc.craft404.ui.dashboard.DashboardFragment"
+        android:name="com.mstc.craft404.ui.Resources.ResourcesFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_resources" />
 
     <fragment
-        android:id="@+id/navigation_results"
-        android:name="com.mstc.craft404.ui.results.ResultsFragment"
-        android:label="@string/title_results"
-        tools:layout="@layout/results_fragment" />
-    <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.mstc.craft404.ui.notifications.NotificationsFragment"
+        android:name="com.mstc.craft404.ui.Submissions.Submissionsfragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_submissions" />
 
     <fragment
         android:id="@+id/navigation_contacts"
-        android:name="com.mstc.craft404.ui.contacts.ContactsFragment"
+        android:name="com.mstc.craft404.ui.AboutUs.AboutUsFragment"
         android:label="@string/title_contacts"
-        tools:layout="@layout/contacts_fragment" />
+        tools:layout="@layout/fragment_aboutus" />
 
 
 </navigation>
