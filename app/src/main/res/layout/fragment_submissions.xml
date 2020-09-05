@@ -16,13 +16,15 @@
             android:id="@+id/appBarLayoutsubs"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:background="@color/white"
             android:fitsSystemWindows="false"
             app:elevation="0dp"
             app:expanded="false">
 
             <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabLayoutsubs"
+                android:id="@+id/tabLayoutsubmission"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
@@ -49,7 +51,7 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPagersubs"
+            android:id="@+id/viewPagersubmission"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

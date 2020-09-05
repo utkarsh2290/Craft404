@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.mstc.craft404.ui.timeline.TimelineFragment"
+        android:name="com.mstc.craft404.fragments.timeline.TimelineFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_timeline" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.mstc.craft404.ui.Resources.ResourcesFragment"
+        android:name="com.mstc.craft404.fragments.Resources.ResourcesFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_resources" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.mstc.craft404.ui.Submissions.Submissionsfragment"
+        android:name="com.mstc.craft404.fragments.Submissions.Submissionsfragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_submissions" />
 
     <fragment
         android:id="@+id/navigation_contacts"
-        android:name="com.mstc.craft404.ui.AboutUs.AboutUsFragment"
+        android:name="com.mstc.craft404.fragments.AboutUs.AboutUsFragment"
         android:label="@string/title_contacts"
         tools:layout="@layout/fragment_aboutus" />
 

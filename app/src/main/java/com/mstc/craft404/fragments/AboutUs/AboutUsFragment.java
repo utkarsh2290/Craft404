@@ -1,4 +1,4 @@
-package com.mstc.craft404.ui.AboutUs;
+package com.mstc.craft404.fragments.AboutUs;
 
 import android.os.Bundle;
 
@@ -15,9 +15,6 @@ import com.google.android.material.tabs.TabLayout;
 import com.mstc.craft404.MainActivity;
 import com.mstc.craft404.R;
 import com.mstc.craft404.adapters.AboutAdapter;
-import com.mstc.craft404.adapters.TimelineAdapter;
-import com.mstc.craft404.ui.timeline.timelineday1;
-import com.mstc.craft404.ui.timeline.timelineday2;
 
 public class AboutUsFragment extends Fragment {
 
@@ -45,9 +42,9 @@ public class AboutUsFragment extends Fragment {
         aboutus_tablayout.setupWithViewPager(aboutusViewpager);
 
         AboutAdapter adapter= new AboutAdapter(getChildFragmentManager());
-        adapter.addfragment(new fragmentChapter(),"Chapter");
-        adapter.addfragment(new fragmentChapter(),"Speakers");
-        adapter.addfragment(new fragmentSponsor(),"Sponsors");
+        adapter.addfragment(new aboutusChapter(),"Chapter");
+        adapter.addfragment(new aboutusSpeakers(),"Speakers");
+        adapter.addfragment(new aboutusSponsor(),"Sponsors");
         aboutusViewpager.setAdapter(adapter);
     }
 

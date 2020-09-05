@@ -15,15 +15,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.mstc.craft404.R;
-import com.mstc.craft404.model.speakersModel;
+import com.mstc.craft404.model.SpeakersModel;
 
 import java.util.List;
 
 public class speakersAdapter extends RecyclerView.Adapter<speakersAdapter.myViewHolder> {
-    private List<speakersModel> mDataSpeaker;
+    private List<SpeakersModel> mDataSpeaker;
     private Context mContext;
 
-    public speakersAdapter(List<speakersModel> mData_speaker, Context mContext) {
+    public speakersAdapter(List<SpeakersModel> mData_speaker, Context mContext) {
         this.mDataSpeaker = mData_speaker;
         this.mContext = mContext;
     }

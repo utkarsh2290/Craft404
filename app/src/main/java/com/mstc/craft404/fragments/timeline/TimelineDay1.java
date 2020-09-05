@@ -1,4 +1,4 @@
-package com.mstc.craft404.ui.timeline;
+package com.mstc.craft404.fragments.timeline;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,11 +20,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mstc.craft404.R;
 
-public class timelineday1 extends Fragment {
+public class TimelineDay1 extends Fragment {
 
     private ImageView timelineDay1;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+    ProgressBar day1Progressbar;
 
     @Nullable
     @Override
@@ -38,15 +40,17 @@ public class timelineday1 extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         timelineDay1=view.findViewById(R.id.imageview_day1);
+        day1Progressbar=view.findViewById(R.id.progressbarday1);
         DatabaseReference timeline=databaseReference.child("Timeline");
 
         timeline.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                day1Progressbar.setVisibility(View.VISIBLE);
                 String day1 = snapshot.child("0").getValue(String.class);
                 Log.i("Value fetched", day1);
                 Glide.with(getContext()).load(day1).into(timelineDay1);
+                day1Progressbar.setVisibility(View.INVISIBLE);
             }
 
             @Override

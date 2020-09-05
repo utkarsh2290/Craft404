@@ -13,7 +13,7 @@
         android:layout_marginTop="16dp">
 
         <ProgressBar
-            android:id="@+id/progressbarresday2"
+            android:id="@+id/progressbarfaq"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -22,19 +22,9 @@
             android:indeterminateTintMode="src_atop"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/resday2RecyclerView"
+            android:id="@+id/faqRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="24dp"
-            android:text="Check your internet !"
-            android:textColor="@color/colorPrimary"
-            android:layout_centerInParent="true"
-            android:visibility="gone"
-            android:id="@+id/internetcheckresday2"/>
 
 
     </RelativeLayout>

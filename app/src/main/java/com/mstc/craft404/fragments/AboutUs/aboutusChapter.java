@@ -1,4 +1,4 @@
-package com.mstc.craft404.ui.AboutUs;
+package com.mstc.craft404.fragments.AboutUs;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.mstc.craft404.R;
 
-public class fragmentChapter extends Fragment {
+public class aboutusChapter extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/faqtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gotham_medium"
+            android:text="This is a title"
+            android:textColor="@color/titlecolor"
+            android:textSize="18dp" />
+
+        <RelativeLayout
+        android:id="@+id/faq_button"
+            android:clickable="true"
+            android:focusable="true"
+        android:layout_width="60dp"
+        android:layout_height="36dp"
+            android:layout_alignParentEnd="true">
+        <Button
+            android:id="@+id/faq_button_nested"
+            android:layout_width="18dp"
+            android:layout_height="12dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/ic_faq_button" />
+    </RelativeLayout>
+
+        <TextView
+            android:id="@+id/faqanswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/faqtitle"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/gotham_light"
+            android:text="sample text here"
+            android:textColor="@color/titlecolor"
+            android:textSize="14dp" />
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

@@ -3,10 +3,10 @@ package com.mstc.craft404.model;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class speakersModel {
+public class SpeakersModel {
     private String speakerName,speakerDescription,speakerLink,speakerPicLink;
 
-    public speakersModel(String speakerName, String speakerDescription, String speakerLink,String speakerPicLink) {
+    public SpeakersModel(String speakerName, String speakerDescription, String speakerLink, String speakerPicLink) {
 
         this.speakerName = speakerName;
         this.speakerDescription = speakerDescription;

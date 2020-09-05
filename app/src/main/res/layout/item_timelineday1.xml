@@ -1,20 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
     android:background="@color/white">
 
-
+        <androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/imageview_day1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/imageview_day1"
+            android:adjustViewBounds="true"
             android:scaleType="fitXY"
-            android:adjustViewBounds="true"/>
+            app:layout_constraintBottom_toTopOf="@+id/progressbarday1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+</androidx.core.widget.NestedScrollView>
+        <ProgressBar
+            android:id="@+id/progressbarday1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/colorPrimary"
+            android:indeterminateTintMode="src_atop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
 
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

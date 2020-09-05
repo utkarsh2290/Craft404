@@ -1,4 +1,4 @@
-package com.mstc.craft404.ui.Resources;
+package com.mstc.craft404.fragments.Resources;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,30 +18,30 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mstc.craft404.R;
-import com.mstc.craft404.adapters.resources.ResourcesDaysAdapter;
-import com.mstc.craft404.model.ResourcesObject;
+import com.mstc.craft404.adapters.resources.ResourcesFilesAdapter;
+import com.mstc.craft404.model.ResourcesModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class resourcesday1 extends Fragment {
+public class resourcesfiles extends Fragment {
     RecyclerView resday1RecyclerView;
     ProgressBar resday1Progressbar;
-    List<ResourcesObject> resourcesObjectList=new ArrayList<>();
+    List<ResourcesModel> resourcesObjectList=new ArrayList<>();
     DatabaseReference databaseReference_resday1;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_resday1,container,false);
+        return inflater.inflate(R.layout.fragment_resfiles,container,false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        resday1Progressbar=view.findViewById(R.id.progressbarresday1);
-        resday1RecyclerView = view.findViewById(R.id.resday1RecyclerView);
+        resday1Progressbar=view.findViewById(R.id.progressbarresfiles);
+        resday1RecyclerView = view.findViewById(R.id.resfilesRecyclerView);
         resday1RecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         initializeData();
     }
@@ -59,9 +59,9 @@ public class resourcesday1 extends Fragment {
                     String desc = dataSnapshot.child("desc").getValue().toString();
                     String imglink = dataSnapshot.child("link").getValue().toString();
                     String link = dataSnapshot.child("reslink").getValue().toString();
-                    resourcesObjectList.add(new ResourcesObject(title,desc,date,imglink,link));
+                    resourcesObjectList.add(new ResourcesModel(title,desc,date,imglink,link));
                 }
-                ResourcesDaysAdapter adapter=new ResourcesDaysAdapter(getContext(),resourcesObjectList);
+                ResourcesFilesAdapter adapter=new ResourcesFilesAdapter(getContext(),resourcesObjectList);
                 resday1RecyclerView.setAdapter(adapter);
                 resday1Progressbar.setVisibility(View.INVISIBLE);
 

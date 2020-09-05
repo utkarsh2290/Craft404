@@ -1,11 +1,11 @@
-package com.mstc.craft404.ui.Submissions;
+package com.mstc.craft404.fragments.Submissions;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,15 +19,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mstc.craft404.R;
-import com.mstc.craft404.adapters.GuildelinesAdapter;
-
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 
 public class submissionsLeaderboard extends Fragment {
     TextView leaderfirst,leadersecond,leaderthird;
     ImageView imgleaderfirst,imgleadersecond,imgleaderthird;
+    ProgressBar progressBarleaderboard;
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -43,6 +39,7 @@ public class submissionsLeaderboard extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        progressBarleaderboard=view.findViewById(R.id.progressbarleaderboard);
         leaderfirst=view.findViewById(R.id.tv_name_1);
         leadersecond=view.findViewById(R.id.tv_name_2);
         leaderthird=view.findViewById(R.id.tv_name_3);
@@ -57,6 +54,7 @@ public class submissionsLeaderboard extends Fragment {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                progressBarleaderboard.setVisibility(View.VISIBLE);
 
                 leaderfirst.setText(snapshot.child("first").getValue(String.class));
                 leadersecond.setText(snapshot.child("second").getValue(String.class));
@@ -65,7 +63,7 @@ public class submissionsLeaderboard extends Fragment {
                 Glide.with(getContext()).load(snapshot.child("firstimg").getValue().toString()).into(imgleaderfirst);
                 Glide.with(getContext()).load(snapshot.child("secondimg").getValue().toString()).into(imgleadersecond);
                 Glide.with(getContext()).load(snapshot.child("thirdimg").getValue().toString()).into(imgleaderthird);
-
+                progressBarleaderboard.setVisibility(View.INVISIBLE);
 
             }
 

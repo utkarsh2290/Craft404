@@ -1,4 +1,4 @@
-package com.mstc.craft404.ui.AboutUs;
+package com.mstc.craft404.fragments.AboutUs;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -23,7 +23,7 @@ import com.mstc.craft404.adapters.sponsorsAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class fragmentSponsor extends Fragment {
+public class aboutusSponsor extends Fragment {
     private RecyclerView recyclerViewSponsors;
     private DatabaseReference databaseReference_sponsor;
     private ProgressBar sponsor_progress;

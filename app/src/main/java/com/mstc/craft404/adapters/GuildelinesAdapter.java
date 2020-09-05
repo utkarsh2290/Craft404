@@ -7,11 +7,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.helper.widget.Layer;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mstc.craft404.R;
-import com.mstc.craft404.model.ResourcesObject;
 
 import java.util.List;
 

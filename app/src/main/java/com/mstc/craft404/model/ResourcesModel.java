@@ -1,6 +1,6 @@
 package com.mstc.craft404.model;
 
-public class ResourcesObject {
+public class ResourcesModel {
     String restitle;
     String resdesc;
     String resdate;
@@ -47,7 +47,7 @@ public class ResourcesObject {
         this.reslink = reslink;
     }
 
-    public ResourcesObject(String restitle, String resdesc, String resdate, String resimglink, String reslink) {
+    public ResourcesModel(String restitle, String resdesc, String resdate, String resimglink, String reslink) {
         this.restitle = restitle;
         this.resdesc = resdesc;
         this.resdate = resdate;
