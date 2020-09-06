@@ -1,28 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_marginTop="48dp"
-        android:id="@+id/chapter_stc"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/stc_chapter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="24dp">
 
-    <TextView
-        android:id="@+id/tv_chapter_stc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chapter_stc"
-        android:layout_marginTop="24dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/chapter_stc"
+            android:layout_width="264dp"
+            android:layout_height="116dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/stc_chapter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_chapter_stc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna tortor eu accumsan blandit ut posuere non libero. Sed sit ultrices dignissim aliquam, nullam vitae. Diam nunc, amet et egestas purus ultricies. Scelerisque elementum, dui suspendisse dictum nunc. Tempor nibh at amet, neque cursus enim habitant. Enim, lorem ornare aliquam urna. Tellus condimentum varius adipiscing cursus aliquet egestas sagittis, enim ac. Egestas id tellus magna lorem est. Non feugiat ultrices parturient iaculis integer. Tincidunt cras vitae velit gravida ipsum cursus nibh at. Eget accumsan, purus arcu in massa viverra eget id sit."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chapter_stc" />
+
+        <LinearLayout
+            android:id="@+id/contact_chapter_stc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_chapter_stc">
+
+
+            <TextView
+                android:id="@+id/tv_contact_stc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Contact Us"
+                android:textColor="#01224D"
+                android:textSize="18dp" />
+
+            <ImageButton
+                android:id="@+id/button_fb_stc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="24dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_fb_logo" />
+
+            <ImageButton
+                android:id="@+id/button_instagram_stc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="24dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_insta_logo" />
+
+            <ImageButton
+                android:id="@+id/button_linkedin_stc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="24dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_linkedin_logo" />
+
+            <ImageButton
+                android:id="@+id/button_whatsapp_stc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="24dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_wap_logo" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/chapter_siam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/stc_chapter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contact_chapter_stc" />
+
+        <TextView
+            android:id="@+id/tv_chapter_siam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna tortor eu accumsan blandit ut posuere non libero. Sed sit ultrices dignissim aliquam, nullam vitae. Diam nunc, amet et egestas purus ultricies. Scelerisque elementum, dui suspendisse dictum nunc. Tempor nibh at amet, neque cursus enim habitant. Enim, lorem ornare aliquam urna. Tellus condimentum varius adipiscing cursus aliquet egestas sagittis, enim ac. Egestas id tellus magna lorem est. Non feugiat ultrices parturient iaculis integer. Tincidunt cras vitae velit gravida ipsum cursus nibh at. Eget accumsan, purus arcu in massa viverra eget id sit."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chapter_siam" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_chapter_siam">
+
+
+            <TextView
+                android:id="@+id/tv_contact_siam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Contact Us"
+                android:textColor="#01224D"
+                android:textSize="18dp" />
+
+            <ImageButton
+                android:id="@+id/button_fb_siam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="24dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_fb_logo"  />
+
+            <ImageButton
+                android:id="@+id/button_instagram_siam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="24dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_insta_logo"  />
+
+            <ImageButton
+                android:id="@+id/button_linkedin_siam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="24dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_linkedin_logo" />
+
+            <ImageButton
+                android:id="@+id/button_whatsapp_siam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="24dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_wap_logo" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

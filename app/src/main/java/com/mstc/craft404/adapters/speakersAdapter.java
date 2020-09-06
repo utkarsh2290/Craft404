@@ -32,24 +32,13 @@ public class speakersAdapter extends RecyclerView.Adapter<speakersAdapter.myView
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_speaker, parent, false);
-        return new myViewHolder(view);
+        return new speakersAdapter.myViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, final int position) {
         Glide.with(mContext).load(mDataSpeaker.get(position).getSpeakerPicLink()).into(holder.speakerImage);
         holder.speakerName.setText(mDataSpeaker.get(position).getSpeakerName());
-        holder.speakerDesc.setText(mDataSpeaker.get(position).getSpeakerDescription());
-        holder.speakerLink.setText(mDataSpeaker.get(position).getSpeakerLink());
-        holder.speakerLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String link = mDataSpeaker.get(position).getSpeakerLink();
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData((Uri.parse(link)));
-                mContext.startActivity(intent);
-            }
-        });
     }
 
     @Override
@@ -60,14 +49,13 @@ public class speakersAdapter extends RecyclerView.Adapter<speakersAdapter.myView
     public static class myViewHolder extends RecyclerView.ViewHolder{
 
         private ImageView speakerImage;
-        private TextView speakerName,speakerDesc,speakerLink;
+        private TextView speakerName;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-            speakerImage=itemView.findViewById(R.id.speakerImage);
-            speakerName=itemView.findViewById(R.id.speakerName);
-            speakerDesc=itemView.findViewById(R.id.speakerDescription);
-            speakerLink=itemView.findViewById(R.id.speakerLink);
+            speakerImage=itemView.findViewById(R.id.speaker_image);
+            speakerName=itemView.findViewById(R.id.speaker_name);
+
         }
     }
 }

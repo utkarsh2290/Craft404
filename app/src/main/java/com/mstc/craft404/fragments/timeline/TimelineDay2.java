@@ -47,7 +47,7 @@ public class TimelineDay2 extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 day2Progressbar.setVisibility(View.VISIBLE);
-                String day1 = snapshot.child("0").getValue(String.class);
+                String day1 = snapshot.child("1").getValue(String.class);
                 Log.i("Value fetched", day1);
                 Glide.with(getContext()).load(day1).into(timelineDay2);
                 day2Progressbar.setVisibility(View.INVISIBLE);

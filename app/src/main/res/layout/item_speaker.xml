@@ -1,66 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="32dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginEnd="32dp"
-    android:layout_marginBottom="16dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:layout_marginBottom="24dp">
+
 
         <ImageView
-            android:id="@+id/speakerImage"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            app:srcCompat="@drawable/ic_launcher_background" />
+            android:id="@+id/speaker_image"
+            android:layout_width="264dp"
+            android:layout_height="116dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/speakerName"
+            android:id="@+id/speaker_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/speakerImage"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="4dp"
-            android:layout_toEndOf="@+id/speakerImage"
-            android:gravity="center"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:layout_margin="16dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/speaker_image" />
 
-        <TextView
-            android:id="@+id/speakerDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/speakerName"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:layout_toEndOf="@id/speakerImage"
-            android:gravity="center"
-            android:textSize="16dp" />
-
-        <TextView
-            android:id="@+id/speakerLink"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/speakerDescription"
-            android:layout_alignBottom="@id/speakerImage"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="16dp"
-            android:layout_toEndOf="@+id/speakerImage"
-            android:gravity="center"
-            android:textSize="16dp" />
-
-    </RelativeLayout>
-
-</androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
