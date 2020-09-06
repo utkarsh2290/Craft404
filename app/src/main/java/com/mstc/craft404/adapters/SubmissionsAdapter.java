@@ -15,6 +15,7 @@ import java.util.List;
 public class SubmissionsAdapter extends FragmentStatePagerAdapter {
     private  final List<Fragment> submissionfragments=new ArrayList<>();
     private final  List<String> submissiontitles=new ArrayList<>();
+
     public SubmissionsAdapter(@NonNull FragmentManager fm) {
         super(fm);
     }
