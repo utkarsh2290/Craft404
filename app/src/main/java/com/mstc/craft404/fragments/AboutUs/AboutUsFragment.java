@@ -15,6 +15,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.mstc.craft404.activities.MainActivity;
 import com.mstc.craft404.R;
 import com.mstc.craft404.adapters.AboutAdapter;
+import com.mstc.craft404.fragments.timeline.TimelineFragment;
 
 public class AboutUsFragment extends Fragment {
 
