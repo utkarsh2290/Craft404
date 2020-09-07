@@ -16,7 +16,7 @@
             android:id="@+id/appBarLayout2"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:background="@color/white"
+            android:background="@color/background"
             android:fitsSystemWindows="false"
             app:elevation="0dp"
             app:expanded="false">
@@ -25,11 +25,11 @@
                 android:id="@+id/tabLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:background="@color/background"
                 app:tabGravity="fill"
-                app:tabIndicatorColor="@color/titlecolor"
+                app:tabIndicatorColor="@color/white"
                 app:tabMode="fixed"
-                app:tabSelectedTextColor="@color/titlecolor"
+                app:tabSelectedTextColor="@color/white"
                 app:tabTextAppearance="@style/tab_font"
                 app:tabTextColor="@color/tab_inactive">
 

@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.TouchDelegate;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -38,16 +40,37 @@ public class ResourcesFaqAdapter extends RecyclerView.Adapter<ResourcesFaqAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Faqview holder, final int position) {
+    public void onBindViewHolder(@NonNull final Faqview holder, final int position) {
         holder.faqQuest.setText(faqModelList.get(position).getFaqQuestion());
         holder.faqAnsw.setText(faqModelList.get(position).getFaqAnswer());
         final boolean isExpanded = position==mExpandedPosition;
         holder.faqAnsw.setVisibility(isExpanded?View.VISIBLE:View.GONE);
+        holder.button_up.setVisibility(isExpanded?View.VISIBLE:View.GONE);
+        holder.button_down.setVisibility(!isExpanded?View.VISIBLE:View.GONE);
+
         holder.itemView.setActivated(isExpanded);
         if (isExpanded)
+        {
             previousExpandedPosition = position;
+        }
 
-        holder.button_faq_nested.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mExpandedPosition = isExpanded ? -1:position;
+                notifyItemChanged(previousExpandedPosition);
+                notifyItemChanged(position);
+            }
+        });
+        holder.button_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mExpandedPosition = isExpanded ? -1:position;
+                notifyItemChanged(previousExpandedPosition);
+                notifyItemChanged(position);
+            }
+        });
+        holder.button_down.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mExpandedPosition = isExpanded ? -1:position;
@@ -66,27 +89,15 @@ public class ResourcesFaqAdapter extends RecyclerView.Adapter<ResourcesFaqAdapte
     public static class Faqview extends RecyclerView.ViewHolder{
 
         TextView faqQuest,faqAnsw;
-        RelativeLayout button_faq;
-        Button button_faq_nested;
+        Button button_down,button_up;
         public Faqview(@NonNull View itemView) {
             super(itemView);
             faqQuest=itemView.findViewById(R.id.faqtitle);
             faqAnsw=itemView.findViewById(R.id.faqanswer);
-            //button_faq=itemView.findViewById(R.id.faq_button);
-            button_faq_nested=itemView.findViewById(R.id.faq_button_nested);
+            button_down=itemView.findViewById(R.id.faq_button_nested);
+            button_up=itemView.findViewById(R.id.faq_buttonup);
+            button_up.setVisibility(View.INVISIBLE);
             faqAnsw.setVisibility(View.INVISIBLE);
-            final View parent = (View) button_faq_nested.getParent();
-            parent.post( new Runnable() {
-                // Post in the parent's message queue to make sure the parent
-                // lays out its children before we call getHitRect()
-                public void run() {
-                    final Rect r = new Rect();
-                    button_faq_nested.getHitRect(r);
-                    r.top -= 6;
-                    r.bottom += 6;
-                    parent.setTouchDelegate( new TouchDelegate( r , button_faq_nested));
-                }
-            });
         }
     }
 }

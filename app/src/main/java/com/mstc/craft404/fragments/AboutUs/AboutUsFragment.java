@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.android.material.tabs.TabLayout;
-import com.mstc.craft404.MainActivity;
+import com.mstc.craft404.activities.MainActivity;
 import com.mstc.craft404.R;
 import com.mstc.craft404.adapters.AboutAdapter;
 

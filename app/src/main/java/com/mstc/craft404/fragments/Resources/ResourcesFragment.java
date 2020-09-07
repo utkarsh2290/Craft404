@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
-import com.mstc.craft404.MainActivity;
+import com.mstc.craft404.activities.MainActivity;
 import com.mstc.craft404.R;
 import com.mstc.craft404.adapters.resources.ResourcesAdapter;
 import com.mstc.craft404.fragments.timeline.TimelineFragment;

@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/background"
         tools:ignore="UselessParent">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -17,7 +18,7 @@
             android:layout_marginStart="16dp"
             android:layout_width="200dp"
             android:layout_height="48dp"
-            android:background="@color/white"
+            android:background="@color/background"
             android:fitsSystemWindows="false"
             app:elevation="0dp"
             app:expanded="false">
@@ -26,11 +27,11 @@
                 android:id="@+id/tabLayouttimeline"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:background="@color/background"
                 app:tabGravity="fill"
-                app:tabIndicatorColor="@color/titlecolor"
+                app:tabIndicatorColor="@color/white"
                 app:tabMode="fixed"
-                app:tabSelectedTextColor="@color/titlecolor"
+                app:tabSelectedTextColor="@color/white"
                 app:tabTextAppearance="@style/tab_font"
                 app:tabTextColor="@color/tab_inactive">
 
@@ -51,6 +52,7 @@
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPagertimeline"
+            android:background="@color/background"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

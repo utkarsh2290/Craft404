@@ -1,9 +1,10 @@
-package com.mstc.craft404;
+package com.mstc.craft404.activities;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.mstc.craft404.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;

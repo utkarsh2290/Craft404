@@ -48,42 +48,14 @@ public class ResourcesFilesAdapter extends RecyclerView.Adapter<ResourcesFilesAd
         holder.resfiledesc.setText(resourcesObjects_list.get(position).getResdesc());
         holder.resfiledate.setText(resourcesObjects_list.get(position).getResdate());
         Glide.with(context).load(resourcesObjects_list.get(position).getResimglink()).into(holder.resfileimage);
-        holder.button_resfiles.setOnClickListener(new View.OnClickListener() {
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(context)
-                        .setTitle(resourcesObjects_list.get(position).getRestitle())
-                        .setMessage("Would you like to open the resource link ?")
-                        .setPositiveButton("Open", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                String link=resourcesObjects_list.get(position).getReslink();
-                                Intent intent = new Intent(Intent.ACTION_VIEW);
-                                intent.setData((Uri.parse(link)));
-                                context.startActivity(intent);
-                            }
-                        })
-                        .setNegativeButton("Cancel",null)
-                        .show();
-            }
-        });
-        holder.button_resfiles_nested.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new AlertDialog.Builder(context)
-                        .setTitle(resourcesObjects_list.get(position).getRestitle())
-                        .setMessage("Would you like to open the resource link ?")
-                        .setPositiveButton("Open", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                String link=resourcesObjects_list.get(position).getReslink();
-                                Intent intent = new Intent(Intent.ACTION_VIEW);
-                                intent.setData((Uri.parse(link)));
-                                context.startActivity(intent);
-                            }
-                        })
-                        .setNegativeButton("Cancel",null)
-                        .show();
+                String link=resourcesObjects_list.get(position).getReslink();
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData((Uri.parse(link)));
+                context.startActivity(intent);
             }
         });
     }
@@ -97,7 +69,6 @@ public class ResourcesFilesAdapter extends RecyclerView.Adapter<ResourcesFilesAd
 
         private TextView resfiletitle,resfiledate,resfiledesc;
         private ImageView resfileimage;
-        RelativeLayout button_resfiles;
         Button button_resfiles_nested;
         public resourcesDay1view(@NonNull View itemView) {
             super(itemView);
@@ -105,8 +76,6 @@ public class ResourcesFilesAdapter extends RecyclerView.Adapter<ResourcesFilesAd
             resfiledesc=itemView.findViewById(R.id.resfilesdesc);
             resfiledate=itemView.findViewById(R.id.resfilesdate);
             resfileimage=itemView.findViewById(R.id.resday1image);
-            button_resfiles=itemView.findViewById(R.id.resfiles_button);
-            button_resfiles_nested=itemView.findViewById(R.id.resfiles_buttton_nested);
         }
     }
 }

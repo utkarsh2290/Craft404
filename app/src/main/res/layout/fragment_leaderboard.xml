@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@color/background"
     android:layout_height="match_parent">
     <ProgressBar
         android:id="@+id/progressbarleaderboard"
@@ -10,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:indeterminate="true"
-        android:indeterminateTint="@color/colorPrimary"
+        android:indeterminateTint="@color/white"
         android:indeterminateTintMode="src_atop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +48,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/titlecolor"
+        android:textColor="@color/white"
         android:textSize="22dp"
         android:id="@+id/tv_leaderboard_1"
         android:text="First Place"
@@ -60,7 +61,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/titlecolor"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:id="@+id/tv_name_1"
         android:text="Prajesh"
@@ -72,7 +73,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/titlecolor"
+        android:textColor="@color/white"
         android:textSize="22dp"
         android:id="@+id/tv_leaderboard_2"
         android:text="Second Place"
@@ -85,7 +86,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/titlecolor"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:id="@+id/tv_name_2"
         android:text="Prajesh"
@@ -97,7 +98,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/titlecolor"
+        android:textColor="@color/white"
         android:textSize="22dp"
         android:id="@+id/tv_leaderboard_3"
         android:text="Third Place"
@@ -110,7 +111,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/titlecolor"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:id="@+id/tv_name_3"
         android:text="Prajesh"

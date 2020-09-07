@@ -1,9 +1,12 @@
 package com.mstc.craft404.fragments.Submissions;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
@@ -30,7 +33,7 @@ public class submissionsGuidelines extends Fragment {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     ProgressBar progressBarguidelines;
-
+    Button submission;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,6 +47,17 @@ public class submissionsGuidelines extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         progressBarguidelines=view.findViewById(R.id.progressbarguidelines);
         guidelinesRecyclerView = view.findViewById(R.id.guidelinesRecyclerView);
+        submission=view.findViewById(R.id.button_submission);
+
+        submission.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String link="https://vtop.vit.ac.in/vtop/initialProcess";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData((Uri.parse(link)));
+                startActivity(intent);
+            }
+        });
         guidelinesRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         initializeData();
     }

@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_marginBottom="16dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/background">
 
     <TextView
         android:id="@+id/tvguidelines"
@@ -12,7 +13,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/gotham_medium"
         android:textSize="18dp"
-        android:textColor="@color/titlecolor"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
