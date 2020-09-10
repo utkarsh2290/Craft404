@@ -1,6 +1,9 @@
 package com.mstc.craft404.fragments.Submissions;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,6 +38,8 @@ public class submissionsGuidelines extends Fragment {
     private DatabaseReference databaseReference;
     ProgressBar progressBarguidelines;
     Button submission;
+    private TextView tv_internet_check;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -48,7 +54,8 @@ public class submissionsGuidelines extends Fragment {
         progressBarguidelines=view.findViewById(R.id.progressbarguidelines);
         guidelinesRecyclerView = view.findViewById(R.id.guidelinesRecyclerView);
         submission=view.findViewById(R.id.button_submission);
-
+        tv_internet_check=view.findViewById(R.id.tv_internetcheck);
+        checkConnection();
         submission.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +83,8 @@ public class submissionsGuidelines extends Fragment {
                 GuildelinesAdapter adapter=new GuildelinesAdapter(getContext(),guidelines);
                 guidelinesRecyclerView.setAdapter(adapter);
                 progressBarguidelines.setVisibility(View.INVISIBLE);
-
+                submission.setVisibility(View.VISIBLE);
+                tv_internet_check.setVisibility(View.INVISIBLE);
             }
 
             @Override
@@ -85,5 +93,16 @@ public class submissionsGuidelines extends Fragment {
             }
         });
 
+    }
+
+    private void checkConnection() {
+        ConnectivityManager manager = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = manager.getActiveNetworkInfo();
+
+        if (activeNetwork == null) {
+            tv_internet_check.setVisibility(View.VISIBLE);
+            progressBarguidelines.setVisibility(View.INVISIBLE);
+        }
     }
 }

@@ -22,7 +22,16 @@
             android:scaleType="fitXY"
             android:adjustViewBounds="true"/>
 
-
+        <TextView
+            android:id="@+id/tv_internetcheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Check your internet !"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:visibility="invisible"
+            />
 
 
 </RelativeLayout>

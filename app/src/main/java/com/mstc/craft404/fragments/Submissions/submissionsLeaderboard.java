@@ -1,5 +1,8 @@
 package com.mstc.craft404.fragments.Submissions;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +30,7 @@ public class submissionsLeaderboard extends Fragment {
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+    private TextView tv_internet_check;
 
     @Nullable
     @Override
@@ -46,6 +50,8 @@ public class submissionsLeaderboard extends Fragment {
         imgleaderfirst=view.findViewById(R.id.imageview_leader_1);
         imgleadersecond=view.findViewById(R.id.imageview_leader_2);
         imgleaderthird=view.findViewById(R.id.imageview_leader_3);
+        tv_internet_check=view.findViewById(R.id.tv_internetcheck);
+        checkConnection();
         initializeData();
     }
 
@@ -60,10 +66,11 @@ public class submissionsLeaderboard extends Fragment {
                 leadersecond.setText(snapshot.child("second").getValue(String.class));
                 leaderthird.setText(snapshot.child("third").getValue(String.class));
 
-                Glide.with(getContext()).load(snapshot.child("firstimg").getValue().toString()).into(imgleaderfirst);
-                Glide.with(getContext()).load(snapshot.child("secondimg").getValue().toString()).into(imgleadersecond);
-                Glide.with(getContext()).load(snapshot.child("thirdimg").getValue().toString()).into(imgleaderthird);
+                Glide.with(getActivity()).load(snapshot.child("firstimg").getValue().toString()).into(imgleaderfirst);
+                Glide.with(getActivity()).load(snapshot.child("secondimg").getValue().toString()).into(imgleadersecond);
+                Glide.with(getActivity()).load(snapshot.child("thirdimg").getValue().toString()).into(imgleaderthird);
                 progressBarleaderboard.setVisibility(View.INVISIBLE);
+                tv_internet_check.setVisibility(View.INVISIBLE);
 
             }
 
@@ -72,5 +79,16 @@ public class submissionsLeaderboard extends Fragment {
 
             }
         });
+    }
+
+    private void checkConnection() {
+        ConnectivityManager manager = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = manager.getActiveNetworkInfo();
+
+        if (activeNetwork == null) {
+            tv_internet_check.setVisibility(View.VISIBLE);
+            progressBarleaderboard.setVisibility(View.INVISIBLE);
+        }
     }
 }

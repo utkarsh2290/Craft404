@@ -1,5 +1,8 @@
 package com.mstc.craft404.fragments.timeline;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -7,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,22 +30,25 @@ public class TimelineDay1 extends Fragment {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     ProgressBar day1Progressbar;
+    private TextView tv_internet_check;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        firebaseDatabase=FirebaseDatabase.getInstance();
-        databaseReference=firebaseDatabase.getReference();
-        return inflater.inflate(R.layout.item_timelineday1,container,false);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
+        return inflater.inflate(R.layout.item_timelineday1, container, false);
 
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        timelineDay1=view.findViewById(R.id.imageview_day1);
-        day1Progressbar=view.findViewById(R.id.progressbarday1);
-        DatabaseReference timeline=databaseReference.child("Timeline");
+        timelineDay1 = view.findViewById(R.id.imageview_day1);
+        day1Progressbar = view.findViewById(R.id.progressbarday1);
+        tv_internet_check = view.findViewById(R.id.tv_internetcheck);
+        checkConnection();
+        DatabaseReference timeline = databaseReference.child("Timeline");
 
         timeline.addValueEventListener(new ValueEventListener() {
             @Override
@@ -49,8 +56,9 @@ public class TimelineDay1 extends Fragment {
                 day1Progressbar.setVisibility(View.VISIBLE);
                 String day1 = snapshot.child("0").getValue(String.class);
                 Log.i("Value fetched", day1);
-                Glide.with(getContext()).load(day1).into(timelineDay1);
+                Glide.with(getActivity()).load(day1).into(timelineDay1);
                 day1Progressbar.setVisibility(View.INVISIBLE);
+                tv_internet_check.setVisibility(View.INVISIBLE);
             }
 
             @Override
@@ -59,5 +67,17 @@ public class TimelineDay1 extends Fragment {
             }
         });
 
+    }
+
+
+    private void checkConnection() {
+        ConnectivityManager manager = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = manager.getActiveNetworkInfo();
+
+        if (activeNetwork == null) {
+            tv_internet_check.setVisibility(View.VISIBLE);
+            day1Progressbar.setVisibility(View.INVISIBLE);
+        }
     }
 }

@@ -1,11 +1,15 @@
 package com.mstc.craft404.fragments.Resources;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,6 +34,8 @@ public class resourcesfaqs extends Fragment {
     ProgressBar resday2Progressbar;
     List<FaqsModel> resfaqObjectList=new ArrayList<>();
     DatabaseReference databaseReference_faq;
+    private TextView tv_internet_check;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -41,6 +47,8 @@ public class resourcesfaqs extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         resday2Progressbar=view.findViewById(R.id.progressbarfaq);
         resday2RecyclerView = view.findViewById(R.id.faqRecyclerView);
+        tv_internet_check=view.findViewById(R.id.tv_internetcheck);
+        checkConnection();
         resday2RecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         initializeData();
     }
@@ -62,6 +70,7 @@ public class resourcesfaqs extends Fragment {
                 resday2RecyclerView.setAdapter(adapter);
                 Log.i("Answer","Passed");
                 resday2Progressbar.setVisibility(View.INVISIBLE);
+                tv_internet_check.setVisibility(View.INVISIBLE);
             }
 
             @Override
@@ -71,4 +80,16 @@ public class resourcesfaqs extends Fragment {
         });
 
     }
+
+    private void checkConnection() {
+        ConnectivityManager manager = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = manager.getActiveNetworkInfo();
+
+        if (activeNetwork == null) {
+            tv_internet_check.setVisibility(View.VISIBLE);
+            resday2Progressbar.setVisibility(View.INVISIBLE);
+        }
+    }
+
 }

@@ -1,11 +1,15 @@
 package com.mstc.craft404.fragments.AboutUs;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,6 +35,7 @@ public class aboutusSpeakers extends Fragment {
     private RecyclerView recyclerViewSpeakers;
     private DatabaseReference databaseReference_speakers;
     private ProgressBar speakers_progress;
+    private TextView tv_internet_check;
 
     @Nullable
     @Override
@@ -43,6 +48,7 @@ public class aboutusSpeakers extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         findViewById(view);
+        checkConnection();
         setupSpeakers();
 
     }
@@ -65,10 +71,12 @@ public class aboutusSpeakers extends Fragment {
                 speakersAdapter speakersAdapter=new speakersAdapter(speakersList,getContext());
                 recyclerViewSpeakers.setAdapter(speakersAdapter);
                 speakers_progress.setVisibility(View.INVISIBLE);
+                tv_internet_check.setVisibility(View.INVISIBLE);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+                tv_internet_check.setVisibility(View.VISIBLE);
                 Log.i("Unable to load Speakers",error.getMessage());
             }
         });
@@ -78,7 +86,19 @@ public class aboutusSpeakers extends Fragment {
     {
         speakers_progress=view.findViewById(R.id.speaker_progressbar);
         recyclerViewSpeakers =view.findViewById(R.id.recyclerview_speaker);
+        tv_internet_check=view.findViewById(R.id.tv_internetcheck);
         recyclerViewSpeakers.setLayoutManager(new LinearLayoutManager(getContext()));
 
+    }
+
+    private void checkConnection() {
+        ConnectivityManager manager = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = manager.getActiveNetworkInfo();
+
+        if (activeNetwork == null) {
+            tv_internet_check.setVisibility(View.VISIBLE);
+            speakers_progress.setVisibility(View.INVISIBLE);
+        }
     }
 }

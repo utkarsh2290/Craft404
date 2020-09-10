@@ -1,11 +1,15 @@
 package com.mstc.craft404.fragments.AboutUs;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,6 +34,8 @@ public class aboutusSponsor extends Fragment {
     private RecyclerView recyclerViewSponsors;
     private DatabaseReference databaseReference_sponsor;
     private ProgressBar sponsor_progress;
+    private TextView tv_internet_check;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -41,6 +47,7 @@ public class aboutusSponsor extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         findViewById(view);
+        checkConnection();
         setupSponsors();
     }
 
@@ -60,10 +67,12 @@ public class aboutusSponsor extends Fragment {
                 sponsorsAdapter sponsorsAdapter=new sponsorsAdapter(sponsorsList,getContext());
                 recyclerViewSponsors.setAdapter(sponsorsAdapter);
                 sponsor_progress.setVisibility(View.INVISIBLE);
+                tv_internet_check.setVisibility(View.INVISIBLE);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+                tv_internet_check.setVisibility(View.VISIBLE);
                 Log.i("Unable to load Sponsors", error.getMessage());
             }
         });
@@ -73,7 +82,20 @@ public class aboutusSponsor extends Fragment {
     {
         sponsor_progress=view.findViewById(R.id.sponsor_progressbar);
         recyclerViewSponsors =view.findViewById(R.id.recyclerview_sponsor);
+        tv_internet_check=view.findViewById(R.id.tv_internetcheck);
         recyclerViewSponsors.setLayoutManager(new LinearLayoutManager(getContext()));
 
     }
+
+    private void checkConnection() {
+        ConnectivityManager manager = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = manager.getActiveNetworkInfo();
+
+        if (activeNetwork == null) {
+            tv_internet_check.setVisibility(View.VISIBLE);
+            sponsor_progress.setVisibility(View.INVISIBLE);
+        }
+    }
+
 }
