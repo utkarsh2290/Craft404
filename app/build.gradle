@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.mstc.craft404"
-        minSdkVersion 26
+        minSdkVersion 20
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -20,6 +20,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    // CHANGED BY H
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -40,6 +45,10 @@ dependencies {
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //NOTIFICATIONS
+    implementation 'androidx.core:core:1.3.1'
+    implementation 'com.google.firebase:firebase-messaging:20.2.4'
 
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
