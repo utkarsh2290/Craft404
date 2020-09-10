@@ -25,6 +25,7 @@ import com.mstc.craft404.R;
 
 public class submissionsLeaderboard extends Fragment {
     TextView leaderfirst,leadersecond,leaderthird;
+    TextView first,second,third;
     ImageView imgleaderfirst,imgleadersecond,imgleaderthird;
     ProgressBar progressBarleaderboard;
 
@@ -44,6 +45,9 @@ public class submissionsLeaderboard extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         progressBarleaderboard=view.findViewById(R.id.progressbarleaderboard);
+        first=view.findViewById(R.id.tv_leaderboard_1);
+        second=view.findViewById(R.id.tv_leaderboard_2);
+        third=view.findViewById(R.id.tv_leaderboard_3);
         leaderfirst=view.findViewById(R.id.tv_name_1);
         leadersecond=view.findViewById(R.id.tv_name_2);
         leaderthird=view.findViewById(R.id.tv_name_3);
@@ -71,6 +75,9 @@ public class submissionsLeaderboard extends Fragment {
                 Glide.with(getActivity()).load(snapshot.child("thirdimg").getValue().toString()).into(imgleaderthird);
                 progressBarleaderboard.setVisibility(View.INVISIBLE);
                 tv_internet_check.setVisibility(View.INVISIBLE);
+                first.setVisibility(View.VISIBLE);
+                second.setVisibility(View.VISIBLE);
+                third.setVisibility(View.VISIBLE);
 
             }
 
@@ -89,6 +96,10 @@ public class submissionsLeaderboard extends Fragment {
         if (activeNetwork == null) {
             tv_internet_check.setVisibility(View.VISIBLE);
             progressBarleaderboard.setVisibility(View.INVISIBLE);
+            first.setVisibility(View.INVISIBLE);
+            second.setVisibility(View.INVISIBLE);
+            third.setVisibility(View.INVISIBLE);
+
         }
     }
 }
