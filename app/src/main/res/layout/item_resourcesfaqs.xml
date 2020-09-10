@@ -35,15 +35,6 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/ic_faq_button" />
-        <Button
-            android:id="@+id/faq_buttonup"
-            android:layout_width="18dp"
-            android:layout_height="12dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/ic_uparrow"/>
 
 
         <TextView

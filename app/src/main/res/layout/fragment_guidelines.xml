@@ -23,7 +23,7 @@
         android:id="@+id/guidelinesRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +34,7 @@
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/ic_button_bg"
+        android:background="@drawable/ripple"
         android:fontFamily="@font/gotham_medium"
         android:text="Submission Portal"
         android:textAllCaps="false"
