@@ -32,6 +32,7 @@ public class aboutusChapter extends Fragment {
 
         findViewById(view);
         onClickListener();
+        onClickListener2();
     }
 
 
@@ -75,6 +76,36 @@ public class aboutusChapter extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData((Uri.parse("https://www.facebook.com/mstcvit/")));
+                startActivity(intent);
+            }
+        });
+
+    }
+    private void onClickListener2()
+    {
+        buttonInstagramSiam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData((Uri.parse("https://www.instagram.com/siamvit/")));
+                startActivity(intent);
+            }
+        });
+
+        buttonLinkedInSiam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData((Uri.parse("https://www.linkedin.com/company/siam-vit/")));
+                startActivity(intent);
+            }
+        });
+
+        buttonFacebookSiam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData((Uri.parse("https://www.facebook.com/SIAMVIT/")));
                 startActivity(intent);
             }
         });

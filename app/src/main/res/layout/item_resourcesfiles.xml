@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/background"
+    android:background="@drawable/ripple_for_files"
     android:padding="16dp">
 
     <ImageView
@@ -19,39 +18,38 @@
         android:id="@+id/resfilestitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:fontFamily="@font/gotham_medium"
+        android:text="This is a title"
         android:textColor="@color/white"
         android:textSize="16dp"
-        android:text="This is a title"
-        android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@+id/resday1image"
         app:layout_constraintTop_toTopOf="@+id/resday1image" />
+
     <TextView
         android:id="@+id/resfilesdesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:fontFamily="@font/gotham_light"
+        android:text="This is a desc"
         android:textColor="@color/white"
         android:textSize="14dp"
-        android:text="This is a desc"
-        android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@+id/resday1image"
         app:layout_constraintTop_toBottomOf="@+id/resfilestitle" />
+
     <TextView
         android:id="@+id/resfilesdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
         android:fontFamily="@font/gotham_light"
+        android:text="03/10/2020"
         android:textColor="@color/white"
         android:textSize="12dp"
-        android:text="03/10/2020"
-        android:layout_marginTop="2dp"
-        android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@+id/resday1image"
         app:layout_constraintTop_toBottomOf="@+id/resfilesdesc" />
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
