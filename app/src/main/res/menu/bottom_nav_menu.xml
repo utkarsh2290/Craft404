@@ -4,22 +4,26 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_timeline"
-        android:title="Timeline" />
+        android:title="Timeline"
+        android:fontFamily="@font/gotham_medium"/>
 
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/ic_resources"
-        android:title="Resources" />
+        android:title="Resources"
+        android:fontFamily="@font/gotham_medium"/>
 
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_submissions"
-        android:title="Submissions " />
+        android:title="Submissions "
+        android:fontFamily="@font/gotham_medium"/>
 
     <item
         android:id="@+id/navigation_contacts"
         android:icon="@drawable/ic_about_us"
-        android:title="About us    " />
+        android:title="About us    "
+        android:fontFamily="@font/gotham_medium"/>
 
 
 </menu>
