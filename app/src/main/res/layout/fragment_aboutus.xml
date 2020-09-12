@@ -36,16 +36,19 @@
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Chapter" />
+                    android:text="Chapter"
+                    android:fontFamily="@font/gotham_medium"/>
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Speakers" />
+                    android:text="Speakers"
+                    android:fontFamily="@font/gotham_medium"/>
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sponsors" />
+                    android:text="Sponsors"
+                    android:fontFamily="@font/gotham_medium"/>
 
 
             </com.google.android.material.tabs.TabLayout>
