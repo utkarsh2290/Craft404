@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/imageview_day2"
             android:scaleType="fitXY"
+            android:padding="16dp"
             android:adjustViewBounds="true"/>
 
         <TextView

@@ -78,8 +78,8 @@ public class FBMservice extends com.google.firebase.messaging.FirebaseMessagingS
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this,CHANNEL_ID)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.logo)) //SET APP ICON HERE
-                .setSmallIcon(R.drawable.logo)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.ic_logo_plain)) //SET APP ICON HERE
+                .setSmallIcon(R.drawable.ic_logo_plain)
                 .setContentTitle(title)
                 .setContentText(messageBody)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
