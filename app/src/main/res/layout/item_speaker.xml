@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/speaker_name"
+            android:id="@+id/speaker_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -30,7 +30,20 @@
             app:layout_constraintStart_toStartOf="parent"
             android:fontFamily="@font/gotham_regular"
             android:textColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@+id/speaker_image" />
+            app:layout_constraintTop_toBottomOf="@+id/speaker_name" />
+
+        <TextView
+            android:id="@+id/speaker_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="24dp"
+            android:textSize="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/gotham_regular"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/speaker_image"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

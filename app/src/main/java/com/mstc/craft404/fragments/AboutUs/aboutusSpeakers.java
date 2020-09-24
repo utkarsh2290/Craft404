@@ -24,9 +24,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mstc.craft404.R;
 import com.mstc.craft404.adapters.speakersAdapter;
-import com.mstc.craft404.adapters.sponsorsAdapter;
 import com.mstc.craft404.model.SpeakersModel;
-import com.mstc.craft404.model.SponsorsModel;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,8 +64,9 @@ public class aboutusSpeakers extends Fragment {
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
                     String name=dataSnapshot.child("name").getValue().toString();
                     String image=dataSnapshot.child("picpath").getValue().toString();
+                    String content=dataSnapshot.child("content").getValue().toString();
                     Log.i("Speaker Details",image);
-                    speakersList.add(new SpeakersModel(name,image));
+                    speakersList.add(new SpeakersModel(name,image,content));
                 }
                 speakersAdapter speakersAdapter=new speakersAdapter(speakersList,getContext());
                 recyclerViewSpeakers.setAdapter(speakersAdapter);
