@@ -33,6 +33,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_empty_leaderboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Result to be announced soon!"
+        android:fontFamily="@font/gotham_medium"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageview_leader_1"
         android:layout_width="80dp"
@@ -64,7 +79,6 @@
         android:id="@+id/tv_leaderboard_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="First Place"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/gotham_medium"
@@ -88,7 +102,6 @@
         android:id="@+id/tv_leaderboard_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Second Place"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/gotham_medium"
@@ -112,7 +125,6 @@
         android:id="@+id/tv_leaderboard_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Third Place"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/gotham_medium"

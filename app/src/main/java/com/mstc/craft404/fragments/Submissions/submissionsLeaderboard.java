@@ -31,7 +31,7 @@ public class submissionsLeaderboard extends Fragment {
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    private TextView tv_internet_check;
+    private TextView tv_internet_check,tv_empty_leaderboard;
 
     @Nullable
     @Override
@@ -55,6 +55,7 @@ public class submissionsLeaderboard extends Fragment {
         imgleadersecond=view.findViewById(R.id.imageview_leader_2);
         imgleaderthird=view.findViewById(R.id.imageview_leader_3);
         tv_internet_check=view.findViewById(R.id.tv_internetcheck);
+        tv_empty_leaderboard=view.findViewById(R.id.tv_empty_leaderboard);
         checkConnection();
         initializeData();
     }
@@ -73,11 +74,20 @@ public class submissionsLeaderboard extends Fragment {
                 Glide.with(getActivity()).load(snapshot.child("firstimg").getValue().toString()).into(imgleaderfirst);
                 Glide.with(getActivity()).load(snapshot.child("secondimg").getValue().toString()).into(imgleadersecond);
                 Glide.with(getActivity()).load(snapshot.child("thirdimg").getValue().toString()).into(imgleaderthird);
-                progressBarleaderboard.setVisibility(View.INVISIBLE);
-                tv_internet_check.setVisibility(View.INVISIBLE);
-                first.setVisibility(View.VISIBLE);
-                second.setVisibility(View.VISIBLE);
-                third.setVisibility(View.VISIBLE);
+
+                if(leaderfirst.getText().toString().matches("")){
+                    tv_empty_leaderboard.setVisibility(View.VISIBLE);
+                    progressBarleaderboard.setVisibility(View.INVISIBLE);
+                    tv_internet_check.setVisibility(View.INVISIBLE);
+                }
+                else{
+                    progressBarleaderboard.setVisibility(View.INVISIBLE);
+                    tv_internet_check.setVisibility(View.INVISIBLE);
+                    first.setVisibility(View.VISIBLE);
+                    second.setVisibility(View.VISIBLE);
+                    third.setVisibility(View.VISIBLE);
+                }
+
 
             }
 
@@ -96,9 +106,7 @@ public class submissionsLeaderboard extends Fragment {
         if (activeNetwork == null) {
             tv_internet_check.setVisibility(View.VISIBLE);
             progressBarleaderboard.setVisibility(View.INVISIBLE);
-            first.setVisibility(View.INVISIBLE);
-            second.setVisibility(View.INVISIBLE);
-            third.setVisibility(View.INVISIBLE);
+
 
         }
     }
