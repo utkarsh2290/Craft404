@@ -5,8 +5,18 @@
     android:padding="8dp"
     android:background="@color/background">
 
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageview_day2"
+            android:scaleType="fitXY"
+            android:padding="16dp"
+            android:adjustViewBounds="true"/>
+        </androidx.core.widget.NestedScrollView>
         <ProgressBar
             android:id="@+id/progressbarday2"
             android:layout_width="wrap_content"
@@ -15,13 +25,7 @@
             android:indeterminate="true"
             android:indeterminateTint="@color/white"
             android:indeterminateTintMode="src_atop"/>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageview_day2"
-            android:scaleType="fitXY"
-            android:padding="16dp"
-            android:adjustViewBounds="true"/>
+
 
         <TextView
             android:id="@+id/tv_internetcheck"
