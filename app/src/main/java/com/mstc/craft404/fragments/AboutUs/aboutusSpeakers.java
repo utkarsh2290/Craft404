@@ -65,8 +65,9 @@ public class aboutusSpeakers extends Fragment {
                     String name=dataSnapshot.child("name").getValue().toString();
                     String image=dataSnapshot.child("picpath").getValue().toString();
                     String content=dataSnapshot.child("content").getValue().toString();
+                    String designation=dataSnapshot.child("designation").getValue().toString();
                     Log.i("Speaker Details",image);
-                    speakersList.add(new SpeakersModel(name,image,content));
+                    speakersList.add(new SpeakersModel(name,image,content,designation));
                 }
                 speakersAdapter speakersAdapter=new speakersAdapter(speakersList,getContext());
                 recyclerViewSpeakers.setAdapter(speakersAdapter);

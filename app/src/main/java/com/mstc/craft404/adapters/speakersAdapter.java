@@ -40,6 +40,7 @@ public class speakersAdapter extends RecyclerView.Adapter<speakersAdapter.myView
         Glide.with(mContext).load(mDataSpeaker.get(position).getSpeakerPicLink()).into(holder.speakerImage);
         holder.speakerName.setText(mDataSpeaker.get(position).getSpeakerName());
         holder.speakerContent.setText(mDataSpeaker.get(position).getSpeakerContent());
+        holder.speakerDesignation.setText(mDataSpeaker.get(position).getSpeakerDesignation());
     }
 
     @Override
@@ -52,12 +53,14 @@ public class speakersAdapter extends RecyclerView.Adapter<speakersAdapter.myView
         private ImageView speakerImage;
         private TextView speakerName;
         private TextView speakerContent;
+        private TextView speakerDesignation;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             speakerImage=itemView.findViewById(R.id.speaker_image);
             speakerName=itemView.findViewById(R.id.speaker_name);
             speakerContent=itemView.findViewById(R.id.speaker_content);
+            speakerDesignation=itemView.findViewById(R.id.speaker_designation);
 
         }
     }
