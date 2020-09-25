@@ -2,7 +2,6 @@ package com.mstc.craft404.model;
 
 public class ResourcesModel {
     String restitle;
-    String resdesc;
     String resdate;
     String resimglink;
     String reslink;
@@ -13,14 +12,6 @@ public class ResourcesModel {
 
     public void setRestitle(String restitle) {
         this.restitle = restitle;
-    }
-
-    public String getResdesc() {
-        return resdesc;
-    }
-
-    public void setResdesc(String resdesc) {
-        this.resdesc = resdesc;
     }
 
     public String getResdate() {
@@ -47,9 +38,8 @@ public class ResourcesModel {
         this.reslink = reslink;
     }
 
-    public ResourcesModel(String restitle, String resdesc, String resdate, String resimglink, String reslink) {
+    public ResourcesModel(String restitle, String resdate, String resimglink, String reslink) {
         this.restitle = restitle;
-        this.resdesc = resdesc;
         this.resdate = resdate;
         this.resimglink = resimglink;
         this.reslink = reslink;

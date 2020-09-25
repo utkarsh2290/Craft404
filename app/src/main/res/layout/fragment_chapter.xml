@@ -26,12 +26,13 @@
             android:id="@+id/tv_chapter_stc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
-            android:textSize="12dp"
-            android:textColor="@color/white"
+            android:layout_marginEnd="16dp"
             android:fontFamily="@font/gotham_regular"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna tortor eu accumsan blandit ut posuere non libero. Sed sit ultrices dignissim aliquam, nullam vitae. Diam nunc, amet et egestas purus ultricies. Scelerisque elementum, dui suspendisse dictum nunc. Tempor nibh at amet, neque cursus enim habitant. Enim, lorem ornare aliquam urna. Tellus condimentum varius adipiscing cursus aliquet egestas sagittis, enim ac. Egestas id tellus magna lorem est. Non feugiat ultrices parturient iaculis integer. Tincidunt cras vitae velit gravida ipsum cursus nibh at. Eget accumsan, purus arcu in massa viverra eget id sit."
+            android:lineSpacingExtra="4dp"
+            android:text="Student Technical Community, VIT is a team of enthusiastic techies and excited learners from the no. 1 private engg. college of India - VIT.  With over 11 Microsoft Student Partners and Alexa Student Influencers amongst us, our chapter has been known for organizing some of the most eminent events across the campus. We are proud curators and mentors of 15+ tech talks, 10+ projects, an active medium platform, and of course, our flagship event “BREW” which had 250+ attendees. We have a mission to foster innovation via projects, while collaborating with students on our campus through workshops, webinars, and events that ensure a definitive transfer of knowledge."
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/chapter_stc" />
@@ -84,15 +85,6 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_linkedin_logo" />
 
-            <ImageButton
-                android:id="@+id/button_whatsapp_stc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="24dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_wap_logo" />
-
         </LinearLayout>
 
         <ImageView
@@ -109,11 +101,13 @@
             android:id="@+id/tv_chapter_siam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
             android:fontFamily="@font/gotham_regular"
+            android:lineSpacingExtra="4dp"
+            android:text="SIAM VIT – Society for Industrial and Applied Mathematics - is a Student technical chapter in Vellore Institute of Technology- affiliated to SIAM International and it works for the application of Mathematics along with computational science to solve real life problems. It provides the required tools to students for developing their knowledge in various fields like Technical, Design and Editorial as per one’s own interest. It also works on developing the management skills of an individual by providing the recruits a chance to conduct a few cultural and technical events which give them an exposure and makes them work for the efficient coordination of the event. "
             android:textColor="@color/white"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna tortor eu accumsan blandit ut posuere non libero. Sed sit ultrices dignissim aliquam, nullam vitae. Diam nunc, amet et egestas purus ultricies. Scelerisque elementum, dui suspendisse dictum nunc. Tempor nibh at amet, neque cursus enim habitant. Enim, lorem ornare aliquam urna. Tellus condimentum varius adipiscing cursus aliquet egestas sagittis, enim ac. Egestas id tellus magna lorem est. Non feugiat ultrices parturient iaculis integer. Tincidunt cras vitae velit gravida ipsum cursus nibh at. Eget accumsan, purus arcu in massa viverra eget id sit."
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/chapter_siam" />
@@ -134,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/gotham_regular"
-                android:text="Contact US"
+                android:text="Contact Us"
                 android:textColor="@color/white"
                 android:textSize="18dp" />
 
@@ -164,15 +158,6 @@
                 android:layout_marginStart="24dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_linkedin_logo" />
-
-            <ImageButton
-                android:id="@+id/button_whatsapp_siam"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="24dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_wap_logo" />
 
         </LinearLayout>
 

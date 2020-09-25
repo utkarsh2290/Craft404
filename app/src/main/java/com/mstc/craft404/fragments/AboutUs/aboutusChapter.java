@@ -17,8 +17,8 @@ import com.mstc.craft404.R;
 
 public class aboutusChapter extends Fragment {
 
-    private ImageButton buttonFacebookStc,buttonInstagramStc,buttonLinkedInStc,buttonWhatsAppStc;
-    private ImageButton buttonFacebookSiam,buttonInstagramSiam,buttonLinkedInSiam,buttonWhatsAppSiam;
+    private ImageButton buttonFacebookStc,buttonInstagramStc,buttonLinkedInStc;
+    private ImageButton buttonFacebookSiam,buttonInstagramSiam,buttonLinkedInSiam;
 
     @Nullable
     @Override
@@ -41,12 +41,12 @@ public class aboutusChapter extends Fragment {
         buttonFacebookStc = view.findViewById(R.id.button_fb_stc);
         buttonInstagramStc = view.findViewById(R.id.button_instagram_stc);
         buttonLinkedInStc = view.findViewById(R.id.button_linkedin_stc);
-        buttonWhatsAppStc = view.findViewById(R.id.button_whatsapp_stc);
+
 
         buttonFacebookSiam = view.findViewById(R.id.button_fb_siam);
         buttonInstagramSiam = view.findViewById(R.id.button_instagram_siam);
         buttonLinkedInSiam = view.findViewById(R.id.button_linkedin_siam);
-        buttonWhatsAppSiam = view.findViewById(R.id.button_whatsapp_siam);
+
 
     }
 

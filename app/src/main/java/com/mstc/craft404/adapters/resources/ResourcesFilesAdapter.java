@@ -45,7 +45,6 @@ public class ResourcesFilesAdapter extends RecyclerView.Adapter<ResourcesFilesAd
     @Override
     public void onBindViewHolder(@NonNull final resourcesDay1view holder, final int position) {
         holder.resfiletitle.setText(resourcesObjects_list.get(position).getRestitle());
-        holder.resfiledesc.setText(resourcesObjects_list.get(position).getResdesc());
         holder.resfiledate.setText(resourcesObjects_list.get(position).getResdate());
         Glide.with(context).load(resourcesObjects_list.get(position).getResimglink()).into(holder.resfileimage);
 
@@ -67,13 +66,12 @@ public class ResourcesFilesAdapter extends RecyclerView.Adapter<ResourcesFilesAd
 
     public static class resourcesDay1view extends RecyclerView.ViewHolder{
 
-        private TextView resfiletitle,resfiledate,resfiledesc;
+        private TextView resfiletitle,resfiledate;
         private ImageView resfileimage;
         Button button_resfiles_nested;
         public resourcesDay1view(@NonNull View itemView) {
             super(itemView);
             resfiletitle=itemView.findViewById(R.id.resfilestitle);
-            resfiledesc=itemView.findViewById(R.id.resfilesdesc);
             resfiledate=itemView.findViewById(R.id.resfilesdate);
             resfileimage=itemView.findViewById(R.id.resday1image);
         }

@@ -19,37 +19,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/gotham_medium"
-        android:text="This is a title"
         android:textColor="@color/white"
         android:textSize="16dp"
         app:layout_constraintStart_toEndOf="@+id/resday1image"
         app:layout_constraintTop_toTopOf="@+id/resday1image" />
 
     <TextView
-        android:id="@+id/resfilesdesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:fontFamily="@font/gotham_light"
-        android:text="This is a desc"
-        android:textColor="@color/white"
-        android:textSize="14dp"
-        app:layout_constraintStart_toEndOf="@+id/resday1image"
-        app:layout_constraintTop_toBottomOf="@+id/resfilestitle" />
-
-    <TextView
         android:id="@+id/resfilesdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/gotham_light"
-        android:text="03/10/2020"
         android:textColor="@color/white"
         android:textSize="12dp"
         app:layout_constraintStart_toEndOf="@+id/resday1image"
-        app:layout_constraintTop_toBottomOf="@+id/resfilesdesc" />
+        app:layout_constraintTop_toBottomOf="@+id/resfilestitle" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

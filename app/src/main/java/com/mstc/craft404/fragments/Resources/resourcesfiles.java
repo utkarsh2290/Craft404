@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,10 +64,10 @@ public class resourcesfiles extends Fragment {
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
                     String title = dataSnapshot.child("title").getValue().toString();
                     String date = dataSnapshot.child("date").getValue().toString();
-                    String desc = dataSnapshot.child("desc").getValue().toString();
                     String imglink = dataSnapshot.child("link").getValue().toString();
                     String link = dataSnapshot.child("reslink").getValue().toString();
-                    resourcesObjectList.add(new ResourcesModel(title,desc,date,imglink,link));
+                    Log.i("Data fetched", String.valueOf(snapshot));
+                    resourcesObjectList.add(new ResourcesModel(title,date,imglink,link));
                 }
                 ResourcesFilesAdapter adapter=new ResourcesFilesAdapter(getContext(),resourcesObjectList);
                 resday1RecyclerView.setAdapter(adapter);
