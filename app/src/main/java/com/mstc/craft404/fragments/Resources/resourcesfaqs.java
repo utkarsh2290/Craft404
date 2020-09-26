@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,9 +61,9 @@ public class resourcesfaqs extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 resfaqObjectList.clear();
                 for(DataSnapshot snapshot1: snapshot.getChildren()){
-                    String qued=snapshot1.child("quest").getValue().toString();
+                    String qued= String.valueOf(Html.fromHtml(snapshot1.child("quest").getValue().toString()));
                     Log.i("Question",qued);
-                    String answ =snapshot1.child("answ").getValue().toString();
+                    String answ = String.valueOf(Html.fromHtml(snapshot1.child("answ").getValue().toString()));
                     Log.i("Answer",answ);
                     resfaqObjectList.add(new FaqsModel(qued,answ));
                 }
