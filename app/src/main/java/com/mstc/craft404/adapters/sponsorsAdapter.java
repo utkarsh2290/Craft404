@@ -2,6 +2,8 @@ package com.mstc.craft404.adapters;
 
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +39,15 @@ public class sponsorsAdapter extends RecyclerView.Adapter<sponsorsAdapter.myView
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
         Glide.with(mContext).load(mDataSponsor.get(position).getSponsorPicLink()).into(holder.sponsorImage);
 
+      holder.sponsorImage.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              String sponsorLink=mDataSponsor.get(position).getSponsorSiteLink();
+              Intent intent=new Intent(Intent.ACTION_VIEW);
+              intent.setData(Uri.parse(sponsorLink));
+              mContext.startActivity(intent);
+          }
+      });
     }
 
     @Override

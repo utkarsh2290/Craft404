@@ -62,7 +62,8 @@ public class aboutusSponsor extends Fragment {
                 sponsorsList.clear();
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
                     String image=dataSnapshot.child("picpath").getValue().toString();
-                    sponsorsList.add(new SponsorsModel(image));
+                    String sponsorLink=dataSnapshot.child("link").getValue().toString();
+                    sponsorsList.add(new SponsorsModel(image,sponsorLink));
                 }
                 sponsorsAdapter sponsorsAdapter=new sponsorsAdapter(sponsorsList,getContext());
                 recyclerViewSponsors.setAdapter(sponsorsAdapter);
