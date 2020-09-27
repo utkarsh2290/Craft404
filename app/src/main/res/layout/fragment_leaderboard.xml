@@ -18,6 +18,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/leaderboardRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tv_internetcheck"
         android:layout_width="wrap_content"
@@ -50,100 +59,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageview_leader_1"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageview_leader_2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageview_leader_1" />
-
-    <ImageView
-        android:id="@+id/imageview_leader_3"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageview_leader_2" />
-
-    <TextView
-        android:id="@+id/tv_leaderboard_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/gotham_medium"
-        android:textColor="@color/white"
-        android:textSize="22dp"
-        app:layout_constraintStart_toEndOf="@+id/imageview_leader_1"
-        app:layout_constraintTop_toTopOf="@+id/imageview_leader_1" />
-
-    <TextView
-        android:id="@+id/tv_name_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:fontFamily="@font/gotham_regular"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintStart_toEndOf="@+id/imageview_leader_1"
-        app:layout_constraintTop_toBottomOf="@+id/tv_leaderboard_1" />
-
-    <TextView
-        android:id="@+id/tv_leaderboard_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/gotham_medium"
-        android:textColor="@color/white"
-        android:textSize="22dp"
-        app:layout_constraintStart_toEndOf="@+id/imageview_leader_2"
-        app:layout_constraintTop_toTopOf="@+id/imageview_leader_2" />
-
-    <TextView
-        android:id="@+id/tv_name_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:fontFamily="@font/gotham_regular"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintStart_toEndOf="@+id/imageview_leader_2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_leaderboard_2" />
-
-    <TextView
-        android:id="@+id/tv_leaderboard_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/gotham_medium"
-        android:textColor="@color/white"
-        android:textSize="22dp"
-        app:layout_constraintStart_toEndOf="@+id/imageview_leader_3"
-        app:layout_constraintTop_toTopOf="@+id/imageview_leader_3" />
-
-    <TextView
-        android:id="@+id/tv_name_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:fontFamily="@font/gotham_regular"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintStart_toEndOf="@+id/imageview_leader_3"
-        app:layout_constraintTop_toBottomOf="@+id/tv_leaderboard_3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

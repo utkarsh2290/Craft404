@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imageview_leader_1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tv_leaderboard_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/gotham_medium"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        app:layout_constraintStart_toEndOf="@+id/imageview_leader_1"
+        app:layout_constraintTop_toTopOf="@+id/imageview_leader_1" />
+
+    <TextView
+        android:id="@+id/tv_name_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/gotham_regular"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/imageview_leader_1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_leaderboard_1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
