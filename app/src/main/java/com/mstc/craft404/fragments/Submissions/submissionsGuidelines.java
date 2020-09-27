@@ -6,12 +6,14 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,8 +38,10 @@ public class submissionsGuidelines extends Fragment {
     List<String> guidelines;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+    DatabaseReference databaseReferencesubs;
     ProgressBar progressBarguidelines;
     Button submission;
+    public String link;
     private TextView tv_internet_check;
 
     @Nullable
@@ -45,6 +49,7 @@ public class submissionsGuidelines extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         firebaseDatabase=FirebaseDatabase.getInstance();
         databaseReference=firebaseDatabase.getReference();
+        databaseReferencesubs=firebaseDatabase.getReference();
         return inflater.inflate(R.layout.fragment_guidelines,container,false);
     }
 
@@ -56,18 +61,43 @@ public class submissionsGuidelines extends Fragment {
         submission=view.findViewById(R.id.button_submission);
         tv_internet_check=view.findViewById(R.id.tv_internetcheck);
         checkConnection();
-        submission.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String link="https://vtop.vit.ac.in/vtop/initialProcess";
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData((Uri.parse(link)));
-                startActivity(intent);
-            }
-        });
+
         guidelinesRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         initializeData();
+        linkcheck();
+
     }
+
+    private void linkcheck() {
+        databaseReferencesubs= FirebaseDatabase.getInstance().getReference().child("Submission");
+        databaseReferencesubs.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                link=snapshot.child("link").getValue(String.class);
+                submission.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(link.matches("")){
+                            Toast.makeText(getContext(),"Link will open soon! Stay tuned.",Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            Intent intent = new Intent(Intent.ACTION_VIEW);
+                            intent.setData((Uri.parse(link)));
+                            startActivity(intent);
+                        }
+                    }
+                });
+                Log.i("Value fetched", link);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
     private void initializeData() {
         guidelines=new ArrayList<>();
         databaseReference= FirebaseDatabase.getInstance().getReference().child("Guidelines");
